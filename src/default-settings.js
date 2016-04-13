@@ -1,13 +1,26 @@
 const settings = {
     //Addition settings for this template
-    //////// Non-webcharts settings go here //////////////////
+    
 
     //Standard webcharts settings
-    //////// Default values for webcharts settings go here ///
+    
 };
 
+// Replicate settings in multiple places in the settings object
+export function syncSettings(settings){
+    //example: settings.y.column = settings.id_col;
+    return settings;
+}
+
+// Default Control objects
 export const controlInputs = [ 
-    //////// Default Control objects go here /////////////////
+	//example:  {label: "Severity", type: "subsetter", multiple: true},
 ];
+
+// Map values from settings to control inputs
+export function syncControlInputs(controlInputs, settings){
+    //example: controlInputs[3].value_col = settings.rel_col;
+    return controlInputs
+}
 
 export default settings

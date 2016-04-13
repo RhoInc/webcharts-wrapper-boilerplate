@@ -1,8 +1,8 @@
 import React from 'react';
 import { select } from 'd3';
-import mainChart from '../../wrapper_es6';
+import mainChart from '../../wrapper';
 
-export default class ReactAETimelines extends React.Component {
+export default class ReactYourProjectName extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -32,4 +32,4 @@ export default class ReactAETimelines extends React.Component {
 	}
 }
 
-ReactAETimelines.defaultProps = {data: [], controlInputs: [], id: 'id'}
+ReactYourProjectName.defaultProps = {data: [], controlInputs: [], id: 'id'}

@@ -1,29 +1,23 @@
 import { createChart, createControls, createTable } from 'webcharts';
-import { controlInputs} from './default-settings'
+import { controlInputs, syncControlInputs, syncSettings } from './default-settings'
 import config from './default-settings';
 import onInit from './onInit';
 import onLayout from './onLayout';
 import onDataTransform from './onDataTransform';
 import onDraw from './onDraw';
 import onResize from './onResize';
-import './bin/object-assign';
+import './util/object-assign';
 
-export default function aeTimeline(element, settings){
+export default function yourFunctionNameHere(element, settings){
+	
 	//merge user's settings with defaults
 	let mergedSettings = Object.assign({}, config, settings);
 
-	//keep settings in sync
-
-	//add custom code to apply the data mappings in the settings object to the webcharts objects
-	//example: mergedSettings.y.column = mergedSettings.id_col;
+	//keep settings in sync with the data mappings
+	mergedSettings = syncSettings(mergedSettings);
 	
-	
-	//keep control settings in sync
-	//add custom code to apply the data mappings in the settings object to the controls 
-	// example: controlInputs[0].value_col = mergedSettings.sev_col;
-	
-	//create controls 
-	// uncomment the line below if default controls are provided
+	//keep control inputs in sync and create controls object (if needed)
+	//let syncedControlInputs = syncControlInputs(controlInputs, mergedSettings);
 	// let controls = createControls(element, {location: 'top', inputs: controlInputs});
 	
 	//create chart
