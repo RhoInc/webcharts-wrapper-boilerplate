@@ -8,7 +8,7 @@
     "dev-watch": "cd test && node watcher.js",
     "build": "rollup -c ./scripts/rollup.wrapper.config.js | babel > ./build/yourFunction.js",
     "build-react": "rollup -c ./scripts/rollup.react.config.js | babel > ./build/yourFunction-react.js"
-  }
+  },
   "author": "Rho Inc",
   "license": "MIT",
   "dependencies": {
