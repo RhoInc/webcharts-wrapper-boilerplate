@@ -1,7 +1,7 @@
 import React from 'react';
-import stringAccessor from './string-accessor';
-import binding from '../binding';
-import reactTemplate from './reactTemplate';
+import stringAccessor from './util/string-accessor';
+import binding from './binding';
+import reactTemplate from './util/reactTemplate';
 import { version as d3_version } from 'd3';
 import { version as wc_version } from 'webcharts';
 
