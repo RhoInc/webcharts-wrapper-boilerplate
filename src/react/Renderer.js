@@ -93,7 +93,7 @@ export default class Renderer extends React.Component {
       colors: [],
       color_by: null,
       resizable:null,
-      scale_text: true,
+      scale_text: null,
       aspect:null,
       range_band: null,
       gridlines:null,
@@ -105,8 +105,7 @@ export default class Renderer extends React.Component {
         bottom:null,
         right:null,
         left:null
-      },
-
+      }
     };
 
     // Does stuff for each data mapping in the binding ... 
