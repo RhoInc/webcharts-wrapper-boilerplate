@@ -12,7 +12,7 @@ function describeCode(props){
 
 var settings = ${JSON.stringify(settings, null, 2)};
 
-var myChart = aeTimelines(dataElement, settings);
+var myChart = myFunctionName(dataElement, settings);
 
 d3.csv(dataPath, function(error, csv) {
   myChart.init(csv);
@@ -23,23 +23,93 @@ d3.csv(dataPath, function(error, csv) {
 
 
 export default class Renderer extends React.Component {
+  // binds basic properties to the react Renderer object
   constructor(props) {
     super(props);
     this.binding = binding;
     this.describeCode = describeCode.bind(this);
     this.state = {data: [], settings: {}, template: {}, loadMsg: 'Loading...'};
   }
+
+  //Defines default settings for the Renderer based on the binding object and ... 
   createSettings(props) {
     const shell = {
-      legend: {
-        mark: 'circle',
-        order: null,
-        label: null
+      max_width: null,
+      date_format: null,
+      x:{
+        label:null,
+        type:null,
+        format: null,
+        column:null,
+        behavior: null,
+        bin: null,
+        sort:null,
+        order: [],
+        domain: null
       },
-      colors: ['#66bd63', '#fdae61', '#d73027', '#6e016b'],
-      color_by: 'AESEV'
+      y:{
+        label:null,
+        type:null,
+        format: null,
+        column:null,
+        behavior: null,
+        bin: null,
+        sort: null,
+        order: [],
+        domain: null
+      },
+      marks: [
+        {
+          type: null,
+          per: [],
+          values: null,
+          split: null,
+          arrange: null,
+          tooltip: null,
+          summarizeX: null,
+          summarizeY: null,
+          attributes: {"fill-opacity": null},
+          text:null
+        },
+        {
+          type: null,
+          per: [],
+          values: null,
+          split: null,
+          arrange: null,
+          tooltip: null,
+          summarizeX: null,
+          summarizeY: null,
+          attributes: {"fill-opacity": null},
+          text:null
+        }
+      ],
+      legend: {
+        label: null,
+        mark: null,
+        order: [],
+        location:null
+      },
+      colors: [],
+      color_by: null,
+      resizable:null,
+      scale_text: true,
+      aspect:null,
+      range_band: null,
+      gridlines:null,
+      transitions:null,
+      width:null,
+      height:null,
+      margin:{
+        top:null,
+        bottom:null,
+        right:null,
+        left:null
+      },
+
     };
 
+    // Does stuff for each data mapping in the binding ... 
     binding.dataMappings.forEach(e => {
       let chartVal = stringAccessor(props.dataMappings, e.source);
       if(chartVal ){
@@ -59,6 +129,8 @@ export default class Renderer extends React.Component {
         }
       }
     });
+
+    //Does stuff for each chartProperty in the mapping ... 
     binding.chartProperties.forEach(e => {
       let chartVal = stringAccessor(props.chartProperties, e.source);
       if(chartVal !== undefined){
@@ -72,22 +144,31 @@ export default class Renderer extends React.Component {
 
     return shell;
   }
+
+  // establishes settings just before initial rendering
   componentWillMount() {
     var settings = this.createSettings(this.props);
     this.setState({settings: settings});
   }
+
+  // updates the settings whenever the component is getting new properties
   componentWillReceiveProps(nextProps){
     var settings = this.createSettings(nextProps);
     this.setState({settings: settings});
   }
+
+  // draws the chart
   render() {
     return (
-      React.createElement(reactTemplate, {
-        id: this.props.id,
-        settings: this.state.settings,
-        controlInputs: this.props.template.controls,
-        data: this.props.data
-      })
+      React.createElement(
+        reactTemplate, 
+        {
+          id: this.props.id,
+          settings: this.state.settings,
+          controlInputs: this.props.template.controls,
+          data: this.props.data
+        }
+      )
     );
   }
 }
