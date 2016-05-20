@@ -4,12 +4,10 @@
   "description": "YourProjectDescriptionHere",
   "main": ".build/yourFunction.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-watch": "cd test && node watcher.js",
     "build": "rollup -c ./scripts/rollup.wrapper.config.js | babel > ./build/yourFunction.js",
-    "build-react": "rollup -c ./scripts/rollup.react.config.js | babel > ./build/yourFunction-react.js"
+    "build-chf": "rollup -c ./scripts/rollup.react.config.js | babel > ./build/yourFunction-react.js"
   },
-  "author": "Rho Inc",
+  "author": "Rho, Inc.",
   "license": "MIT",
   "dependencies": {
     "d3": "^3.5.14",
