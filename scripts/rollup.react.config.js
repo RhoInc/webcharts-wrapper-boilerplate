@@ -1,6 +1,6 @@
 module.exports = {
-  entry: './src/react/bin/Renderer.js',
-  format: 'cjs',
+  entry: './src/chartfoundry/bin/Renderer.js',
+  format: 'umd',
   globals: {
     webcharts: 'webCharts',
     d3: 'd3',
