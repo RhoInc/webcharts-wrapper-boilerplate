@@ -6,7 +6,11 @@
   "scripts": {
     "build": "rollup -c ./scripts/rollup.wrapper.config.js | babel > ./build/yourFunction.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "build-react": "rollup -c ./scripts/rollup.chf.config.js > ./build/yourFunction-chf.js"
+=======
+    "build-chf": "rollup -c ./scripts/rollup.react.config.js | babel > ./build/yourFunction-react.js"
+>>>>>>> origin/master
 =======
     "build-chf": "rollup -c ./scripts/rollup.react.config.js | babel > ./build/yourFunction-react.js"
 >>>>>>> origin/master

@@ -12,7 +12,11 @@ function describeCode(props) {
 `// uses d3 v.${d3Version}
 // uses webcharts v.${wcVersion}
 <<<<<<< HEAD
+<<<<<<< HEAD
 // uses safety-shift-plot v.1.1.0
+=======
+// uses ae-timelines v.1.1.0
+>>>>>>> origin/master
 =======
 // uses ae-timelines v.1.1.0
 >>>>>>> origin/master
