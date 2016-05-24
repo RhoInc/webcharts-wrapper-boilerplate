@@ -1,9 +1,10 @@
 module.exports = {
   entry: './src/chartfoundry/bin/Renderer.js',
-  format: 'cjs',
+  format: 'umd',
   globals: {
     webcharts: 'webCharts',
     d3: 'd3',
     react: 'React'
-  }
+  },
+  moduleName:'yourModuleNameHere'
 }; 

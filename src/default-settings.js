@@ -19,7 +19,9 @@ export const controlInputs = [
 
 // Map values from settings to control inputs
 export function syncControlInputs(controlInputs, settings){
-    //example: controlInputs[3].value_col = settings.rel_col;
+    //example: 
+    //	var measureControl = controlInputs.filter(function(d){return d.label=="Measure"})[0] 
+    //  measureControl.value_col = mergedSettings.measure_col; 
     return controlInputs
 }
 
