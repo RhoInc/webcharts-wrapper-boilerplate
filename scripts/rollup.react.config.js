@@ -5,5 +5,6 @@ module.exports = {
     webcharts: 'webCharts',
     d3: 'd3',
     react: 'React'
-  }
+  },
+  moduleName:'yourModuleNameHere'
 }; 
