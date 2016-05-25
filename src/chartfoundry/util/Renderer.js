@@ -11,19 +11,11 @@ function describeCode(props) {
   const code =
 `// uses d3 v.${d3Version}
 // uses webcharts v.${wcVersion}
-<<<<<<< HEAD
-<<<<<<< HEAD
-// uses safety-shift-plot v.1.1.0
-=======
-// uses ae-timelines v.1.1.0
->>>>>>> origin/master
-=======
-// uses ae-timelines v.1.1.0
->>>>>>> origin/master
+// uses your-library-name v.1.1.0
 
 var settings = ${JSON.stringify(settings, null, 2)};
 
-var myChart = safetyShiftPlot(dataElement, settings);
+var myChart = yourRendererName(dataElement, settings);
 
 d3.csv(dataPath, function(error, csv) {
   myChart.init(csv);
