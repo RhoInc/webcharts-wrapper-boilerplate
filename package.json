@@ -2,7 +2,7 @@
   "name": "YourProjectNameHere",
   "version": "0.0.0",
   "description": "Your Project Description Here",
-  "main": ".build/yourFunction.js",
+  "main": "./build/yourFunction-chf.js",
   "scripts": {
     "build": "rollup -c ./scripts/rollup.wrapper.config.js | babel > ./build/yourFunction.js",
     "build-chf": "rollup -c ./scripts/rollup.chf.config.js  > ./build/yourFunction-chf.js"
