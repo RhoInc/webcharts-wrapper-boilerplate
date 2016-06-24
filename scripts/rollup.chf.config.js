@@ -6,5 +6,11 @@ module.exports = {
     d3: 'd3',
     react: 'React'
   },
-  moduleName: 'yourModuleName'
+  moduleName: 'yourModuleName',
+  plugins: [
+    babel({
+      exclude: 'node_modules/**',
+      presets: ['es2015-rollup']
+    })
+  ]
 }; 
